@@ -12,12 +12,8 @@ proceder con la reserva en alguno de los horarios y asientos disponibles en la s
 3. Crear usuario y password para conexión
 2. Crear variables de entorno -> de acuerdo a los nombres puestos en database.yml (USERNAME, PASSWORD, IP)
 que corresponden con los datos para conectarse a la bd postgresql
-3. Clonar el repositorio desde github: 
-3.1git clone https://github.com/mayalces/cinema.git
+3. Clonar el repositorio desde github: git clone https://github.com/mayalces/cinema.git
 4. Instalar dependencias: bundle install
-5. Crear base de datos:
-5.1rake db:create
-5.2rake db:migrate
-5.3rake db:seed
+5. Crear base de datos: rake db:create, rake db:migrate, rake db:seed
 6. Ejecutar la aplicación: rails s
 
