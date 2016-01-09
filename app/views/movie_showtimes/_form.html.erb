@@ -1,0 +1,29 @@
+<%= form_for(@movie_showtime) do |f| %>
+  <% if @movie_showtime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie_showtime.errors.count, "error") %> prohibited this movie_showtime from being saved:</h2>
+
+      <ul>
+      <% @movie_showtime.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :movie_id %><br />
+    <%= f.select(:movie_id, options_for_select(Movie.all.map{|s|[s.name, s.id]})) %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_room_id %><br />
+    <%= f.select(:movie_room_id, options_for_select(MovieRoom.all.map{|s|[s.id, s.id]})) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

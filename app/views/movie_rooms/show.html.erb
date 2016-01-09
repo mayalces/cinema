@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @movie_room.seats %>
+</p>
+
+<%= link_to 'Edit', edit_movie_room_path(@movie_room) %> |
+<%= link_to 'Back', movie_rooms_path %>

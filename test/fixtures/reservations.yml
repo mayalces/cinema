@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  MovieShowtime_id: 
+  SeatRoom_id: 
+  User_id: 
+  Food_id: 
+  start_time: 2016-01-08 19:24:27
+
+two:
+  MovieShowtime_id: 
+  SeatRoom_id: 
+  User_id: 
+  Food_id: 
+  start_time: 2016-01-08 19:24:27

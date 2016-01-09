@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seat: 1
+  line: MyString
+  state: MyString
+  MovieRoom_id: 
+
+two:
+  seat: 1
+  line: MyString
+  state: MyString
+  MovieRoom_id: 

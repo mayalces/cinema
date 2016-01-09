@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @seat_room.seat %>
+</p>
+
+<p>
+  <strong>Line:</strong>
+  <%= @seat_room.line %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @seat_room.state %>
+</p>
+
+<p>
+  <strong>Movieroom:</strong>
+  <%= @seat_room.MovieRoom %>
+</p>
+
+<%= link_to 'Edit', edit_seat_room_path(@seat_room) %> |
+<%= link_to 'Back', seat_rooms_path %>

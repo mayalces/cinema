@@ -1,14 +1,30 @@
 Rails.application.routes.draw do
-  resources :bookings
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
+  resources :reservations
+  resources :seat_rooms
   resources :foods
-  resources :movie_rooms
   resources :movie_showtimes
+  resources :movie_rooms
   resources :movies
+
+  devise_for :users
+  
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+  end
+  
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#hello'
+  root 'static_pages#home'
+  #root 'users#sign_in'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

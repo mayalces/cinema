@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reservations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Seat</th>
+      <th>User</th>
+      <th>Food</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= Movie.find(MovieShowtime.find(reservation.movie_showtime_id).movie_id).name %></td>
+        <td><%= SeatRoom.find(reservation.seat_room_id).seat.to_s+SeatRoom.find(reservation.seat_room_id).line %></td>
+        <td><%= User.find(reservation.user_id).email %></td>
+        <td><%= Food.find(reservation.food_id).name %></td>
+        <td><%= link_to 'Show', reservation %></td>
+        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservation', new_reservation_path %>

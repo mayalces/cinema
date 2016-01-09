@@ -1,0 +1,21 @@
+<%= form_for(@movie_room) do |f| %>
+  <% if @movie_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie_room.errors.count, "error") %> prohibited this movie_room from being saved:</h2>
+
+      <ul>
+      <% @movie_room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :seats %><br>
+    <%= f.number_field :seats %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

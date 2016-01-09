@@ -1,0 +1,37 @@
+<%= form_for(@reservation) do |f| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ignore-container movie-seats-landing">
+    <div class="container">
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :movie_showtime_id %><br />
+    <%= f.select :movie_showtime_id, options_for_select(MovieShowtime.all.map{|s|[Movie.find(s.movie_id).name, s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :seat_room_id %><br />
+    <%= f.select :seat_room_id, options_for_select(SeatRoom.all.map{|s|s.state == "I" ? nil :[s.seat.to_s+s.line, s.id]}.compact) %>
+  </div>
+  <div class="field">
+    <%= f.label :food_id %><br />
+    <%= f.select :food_id, options_for_select(Food.all.map{|s|[s.name, s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.select :user_id, options_for_select(User.all.map{|s|s.id != current_user.id ? nil :[s.email, s.id]}.compact) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

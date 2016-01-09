@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Seat Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seat</th>
+      <th>Line</th>
+      <th>State</th>
+      <th>Movieroom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seat_rooms.each do |seat_room| %>
+      <tr>
+        <td><%= seat_room.seat %></td>
+        <td><%= seat_room.line %></td>
+        <td><%= seat_room.state %></td>
+        <td><%= MovieRoom.find(seat_room.movie_room_id).id %></td>
+        <td><%= link_to 'Show', seat_room %></td>
+        <td><%= link_to 'Edit', edit_seat_room_path(seat_room) %></td>
+        <td><%= link_to 'Destroy', seat_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seat room', new_seat_room_path %>
