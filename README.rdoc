@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+La aplicación contiene página de logueo, registro y administración.
+Se tienen 2 tipos de usuarios: administrador y usuario
+El administrador puede ingresar la información de las peliculas, los horarios, las salas, la comida,
+los cuales, pueden ser reservados por los usuarios.
+El usuario puede registrarse, ingresar a la aplicación, y 
+proceder con la reserva en alguno de los horarios y asientos disponibles en la sala.
 
-Things you may want to cover:
+<b>Instalación ambiente local</b>
+1. Instalar e iniciar Postgresql 9.3.0
+3. Crear usuario y password para conexión
+2. Crear variables de entorno -> de acuerdo a los nombres puestos en database.yml (USERNAME, PASSWORD, IP)
+que corresponden con los datos para conectarse a la bd postgresql
+3. Clonar el repositorio desde github: 
+3.1git clone https://github.com/mayalces/cinema.git
+4. Instalar dependencias: bundle install
+5. Crear base de datos:
+5.1rake db:create
+5.2rake db:migrate
+5.3rake db:seed
+6. Ejecutar la aplicación: rails s
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
